@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    animation-duration: .5s;
+    animation-name: slidein;
+  }
+  
+
+  @keyframes slidein {
+    from {
+      opacity: 0;
+     
+    }
+  
+    to {
+      opacity: 1;
+   
+    }
+  }

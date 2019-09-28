@@ -1,0 +1,17 @@
+
+        <table class="table table-sm ">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Landing</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of processes">
+                    <th scope="row">{{item.pId}}</th>
+                    <td>{{item.cpuBurst}}</td>
+                    <td>{{item.landingTime}}</td>
+                  </tr>
+                </tbody>
+              </table>

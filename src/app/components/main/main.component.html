@@ -1,1 +1,100 @@
-<p>main works!</p>
+        
+
+<section class="container " >
+  <div class="row justify-content-center" >
+    <div class="col-12 mt-5 rounded card pb-4 m-5" id="container">
+      <div class="card-body container">
+        <div class="row">
+          <div class="col-4">FIFOSIMULATOR </div>
+
+        
+          
+          
+          
+          <!--
+
+
+
+            
+
+         <app-task class="col-8"
+          [processes] = "process"
+          ></app-task>
+          -->
+          <!--Table-->
+          <div class="table-wrapper-scroll-y my-custom-scrollbar mb-5">
+
+          <table class="table table-sm ">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Landing</th>
+                    <th scope="col"> </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of process" 
+                  [ngClass]="{'alert alert-primary': selectItem == item}" 
+                  #number> 
+                  
+                    <th class= "cursor" scope="row" (click) = "selecItem(item)">{{item.pId}}</th>
+                    <td  class= "cursor"  (click) = "selecItem(item)" >{{item.name}}</td>
+                    <td  class= "cursor"  (click) = "selecItem(item)" >{{item.vCpuBurst}}</td>
+                    <td  class= "cursor"  (click) = "selecItem(item)" >{{item.landingTime}}</td>                    <td ><i  [ngClass]="{'fas fa-edit': selectItem != item, 'far fa-check-square': selectItem == item}"
+                      (click) = "saveChange(item,item.pId, name.value,burst.value, landing.value)"></i></td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+
+
+          <div (keyup.enter)="enqueue(name.value,burst.value,landing.value)" class="col-4">
+            <div class="form-group">
+
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name"  placeholder="CpuBurst" #name>
+
+              <label for="burst">CpuBurst</label>
+              <input type="number" class="form-control" id="burst"  placeholder="CpuBurst" #burst>
+
+              <label for="Landing">Landing Time</label>
+              <input type="number" class="form-control" id="Landing"  placeholder="Landing Time" #landing>
+            </div>
+            
+            <button class="btn btn-primary m-1 mt-0" (click)="enqueue(name.value,burst.value,landing.value)">Add</button>
+            <button class="btn btn-primary m-1 mt-0" (click)="run()">Run</button>
+            <button class="btn btn-danger m-1 mt-0" (click)="dequeue()">Remove</button>
+          </div>
+
+
+          <div class="card col-4 ml-4 row custom-scrollbar" style="background: black">
+            <div class="m-2" *ngFor="let item of process">
+            <P>{{item.name }}</P>
+            <div class="progress" >
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" [style.width.%]="(100/(item.vCpuBurst))-(100/item.cpuBurst)"></div>
+          </div>  
+          </div>
+        </div>
+
+        <section class="col-3 ml-4 " style="background: white; border-radius:5%">
+
+        <div class="row custom-scrollbar"> 
+            <div class="alert alert-secondary" role="alert" *ngFor="let logItem of log">
+                {{logItem}}
+              </div>
+              
+            </div>
+            <button class="btn btn-danger mt-1 mb-2" (click)="clear()">Clear</button>
+
+        </section>
+
+
+          <!--Btns-->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

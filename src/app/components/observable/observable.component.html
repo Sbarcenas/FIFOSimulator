@@ -1,0 +1,10 @@
+<app-main
+[process] = "process$ | async"
+[log] = "log$ | async"
+(onEnqueue) = "createTask($event)"
+(onRun) = "run()" 
+(onDequeue) = "dequeue($event)"
+(saveChanges) = "update($event)"
+(clearLog) = "clearLog()"
+>
+</app-main>

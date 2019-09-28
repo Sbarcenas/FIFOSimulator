@@ -1,0 +1,57 @@
+#container {
+    background-color:black;
+    color:white;
+}
+
+.my-custom-scrollbar {
+    position: relative;
+    height: 200px;
+    overflow: auto;
+    min-width: 100%;
+    color:white;
+
+    }
+
+
+    .custom-scrollbar {
+        position: relative;
+        overflow: auto;
+        height: 250px;
+        color:white;
+    
+        }
+
+
+    .table-wrapper-scroll-y {
+    display: block;
+    color:white;
+
+    }
+.cursor {
+    cursor: pointer;
+}
+
+table
+{
+    color: antiquewhite;
+}
+
+.alert {
+    animation-duration: .5s;
+    animation-name: slide;
+  }
+  
+
+  @keyframes slide {
+    from {
+      margin-left: -5%;
+      margin-top:-10%;
+     
+    }
+  
+    to {
+      margin-left: 0%;
+      margin-top:0%;
+   
+    }
+  }

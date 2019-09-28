@@ -1,9 +1,12 @@
 import { Process } from "./process"
-import { log } from 'util';
+import { Injectable } from '@angular/core';
 /*var util = require('util')
 const sleep = util.promysify(setTimeout)
 */
-
+@Injectable({
+    providedIn: 'root'
+  })
+  
 export class ProcessManager {
 
     public processes: Process[] = []
@@ -62,7 +65,6 @@ export class ProcessManager {
             count ++;
             console.log(count)
             if(count == ms){
-                
                 resolve(interval)
             }            
         },1000));    
